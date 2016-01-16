@@ -1,0 +1,28 @@
+{
+  "name": "icsdb",
+  "version": "0.0.1",
+  "author": "Paul de Rosanbo <paul@rosanbo.com>",
+  "description": "Generate a list of usefull ics files for calendar based applications",
+  "keywords": [
+    "icalendar",
+    "rfc5545",
+    "ics"
+  ],
+  "devDependencies": {
+    "icalendar": "~0.7.1",
+    "date-easter": "~0.2.2",
+    "mocha": "~2.3.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/polo2ro/icsdb.git"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "mocha tests/",
+    "build": "node src/build.js"
+  }
+}
