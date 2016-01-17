@@ -11,7 +11,9 @@
   "devDependencies": {
     "icalendar": "~0.7.1",
     "date-easter": "~0.2.2",
-    "mocha": "~2.3.4"
+    "mocha": "~2.3.4",
+    "i18next": "~2.0.22",
+    "i18next-node-fs-backend": "~0.0.6"
   },
   "repository": {
     "type": "git",

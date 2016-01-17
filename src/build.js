@@ -1,11 +1,16 @@
 'use strict';
 
 
-
+/**
+ * Get icalendar object, one per language
+ */
 function getIcalendar(path, callback) {
+
+    var languages = ['fr-FR']; // 'en-US',
 
     var fs = require('fs');
     var icalendar = require('icalendar');
+    var Ical = require('./ical');
 
     fs.readFile('./data/'+path, {
         encoding: 'UTF-8'
@@ -14,18 +19,20 @@ function getIcalendar(path, callback) {
             throw err;
         }
 
-        var ical = icalendar.parse_calendar(data);
-
-        callback(ical);
+        languages.forEach(function(lang) {
+            callback(new Ical(path, icalendar.parse_calendar(data), lang));
+        });
     });
 
 }
 
 
 
-getIcalendar('fr/nonworkingdays.ics', function(ical) {
+getIcalendar('french-nonworkingdays.ics', function(ical) {
 
     // TODO add all easter dates and Pentecost dates for year interval into RDATES
 
-    console.log(ical.toString());
+    ical.translate(function() {
+        //console.log(ical.icalendar.toString());
+    });
 });
