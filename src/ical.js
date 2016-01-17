@@ -8,9 +8,14 @@ function Ical(path, icalendar, language) {
     this.path = path;
     this.icalendar = icalendar;
     this.language = language;
-
+    this.namespace = require('path').basename(path, '.ics');
 }
 
+
+/**
+ * Translate strings in icalendar object
+ * @param {Function} callback
+ */
 Ical.prototype.translate = function translate(callback) {
 
     var ical = this;
@@ -18,23 +23,21 @@ Ical.prototype.translate = function translate(callback) {
     var i18next = require('i18next');
     var Backend = require('i18next-node-fs-backend');
 
-    var path = require('path');
-
-    var namespace = path.basename(ical.path, '.ics');
-
-
 
     i18next
         .use(Backend)
         .init({
         lng: ical.language,
-        'defaultNS': namespace,
-        'backend': {
-            'loadPath': 'i18n/{{lng}}/{{ns}}.json'
+        fallbackLng: 'en-US',
+        ns: ['french-nonworkingdays'],
+        backend: {
+            loadPath: 'i18n/{{lng}}/{{ns}}.json'
         }
     }, function(err, t) {
 
-        console.log(err);
+        if (err) {
+            throw err;
+        }
 
         ical.icalendar.events().forEach(function(event) {
 
@@ -53,8 +56,8 @@ Ical.prototype.translateProperty = function translateProperty(event, propName, t
 
     var property = event.getProperty(propName);
     if (undefined !== property && null !== property.value && '' !== property.value) {
-        event.setProperty(propName, i18next.t(property.value));
-        console.log(i18next.t(property.value));
+        //event.setProperty(propName, i18next.t(property.value, { ns:  this.namespace }));
+        console.log(t(property.value, { ns:  this.namespace, lng: this.language })+' '+this.language);
     }
 };
 

@@ -6,7 +6,7 @@
  */
 function getIcalendar(path, callback) {
 
-    var languages = ['fr-FR']; // 'en-US',
+    var languages = ['en-US','fr-FR'];
 
     var fs = require('fs');
     var icalendar = require('icalendar');
