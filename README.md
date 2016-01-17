@@ -1,4 +1,5 @@
 # icsdb
+
 Open repository of usefull calendar ics files
 
 The purpose of this package is to maintain auto-generated ics files from various sources in the `data/` subfolder. 
@@ -6,7 +7,9 @@ For example, the build script will use a source ics file for french non working 
 of each events, compute list of easter dates for the next years and save the resulting ics file in the `build/` 
 subfolder, one file per language.
 
+## Using the ics files
 
+Use the **raw** button on the github page to get the link, only files in the build subfolder should be used.
 
 
 ## Build ics files
