@@ -6,7 +6,7 @@
  */
 function getIcalendar(path, callback) {
 
-    var languages = ['en-US','fr-FR'];
+    var languages = ['fr-FR', 'en-US'];
 
     var fs = require('fs');
     var icalendar = require('icalendar');
@@ -19,9 +19,39 @@ function getIcalendar(path, callback) {
             throw err;
         }
 
-        languages.forEach(function(lang) {
-            callback(new Ical(path, icalendar.parse_calendar(data), lang));
+        var i18next = require('i18next');
+        var Backend = require('i18next-node-fs-backend');
+
+        var namespace = require('path').basename(path, '.ics');
+
+        i18next
+            .use(Backend)
+            .init({
+            lng: 'en-US',
+            fallbackLng: 'en-US',
+            ns: [namespace],
+            backend: {
+                loadPath: 'i18n/{{lng}}/{{ns}}.json'
+            }
+        }, function(err, t) {
+
+            if (err) {
+                throw err;
+            }
+
+            i18next.loadLanguages(languages, function(err) {
+                if (err) {
+                    throw err;
+                }
+
+                languages.forEach(function(lang) {
+                    callback(new Ical(namespace, icalendar.parse_calendar(data), lang, t));
+                });
+            });
+
         });
+
+
     });
 
 }
@@ -32,7 +62,7 @@ getIcalendar('french-nonworkingdays.ics', function(ical) {
 
     // TODO add all easter dates and Pentecost dates for year interval into RDATES
 
-    ical.translate(function() {
-        //console.log(ical.icalendar.toString());
-    });
+    ical.updateEvents();
+    ical.save();
+
 });
