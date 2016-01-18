@@ -1,8 +1,9 @@
 'use strict';
 
 
-function Ical(namespace, icalendar, language, t) {
+function Ical(filename, namespace, icalendar, language, t) {
 
+    this.filename = filename;
     this.icalendar = icalendar;
     this.language = language;
     this.namespace = namespace;
@@ -53,7 +54,7 @@ Ical.prototype.translateProperty = function translateProperty(event, propName) {
  */
 Ical.prototype.save = function save() {
     var fs = require('fs');
-    fs.writeFile('./build/'+this.language+'/'+this.namespace+'.ics', this.icalendar.toString(), function(err) {
+    fs.writeFile('./build/'+this.language+'/'+this.filename, this.icalendar.toString(), function(err) {
         if (err) {
             throw err;
         }

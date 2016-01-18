@@ -22,7 +22,8 @@ function getIcalendar(path, callback) {
         var i18next = require('i18next');
         var Backend = require('i18next-node-fs-backend');
 
-        var namespace = require('path').basename(path, '.ics');
+        var splited = require('path').basename(path, '.ics').split('-');
+        var namespace = splited[splited.length-1];
 
         i18next
             .use(Backend)
@@ -44,9 +45,10 @@ function getIcalendar(path, callback) {
                     throw err;
                 }
 
+                var filename = require('path').basename(path);
 
                 languages.forEach(function(lang) {
-                    callback(new Ical(namespace, icalendar.parse_calendar(data), lang, t));
+                    callback(new Ical(filename, namespace, icalendar.parse_calendar(data), lang, t));
                 });
             });
 
@@ -68,6 +70,15 @@ getIcalendar('france-nonworkingdays.ics', function(ical) {
 
     // Add all easter dates and Pentecost dates for year interval into RDATES
     france.updateEaster(ical.icalendar.events(), 1900, 2100);
+
+    ical.updateEvents();
+    ical.save();
+
+});
+
+
+
+getIcalendar('england-wales-nonworkingdays.ics', function(ical) {
 
     ical.updateEvents();
     ical.save();
