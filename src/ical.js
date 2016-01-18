@@ -28,6 +28,11 @@ Ical.prototype.updateEvents = function translate() {
     });
 
 
+    var calName = ical.icalendar.getProperty('X-WR-CALNAME');
+    if (undefined !== calName.value) {
+        ical.icalendar.setProperty('X-WR-CALNAME', ical.t(calName.value, { ns:  ical.namespace, lng: ical.language }));
+    }
+
 };
 
 
