@@ -68,10 +68,16 @@ describe('French non working days', function() {
             assert.equal(true, rruleProp.hasOwnProperty('FREQ'));
             assert.equal('YEARLY', rruleProp.FREQ);
 
-            var rrulestr = require('rrule').rrulestr;
+            var RRule = require('rrule').RRule;
 
-            var rrule = rrulestr(event.getProperty('RRULE').format()[0]);
-            var nonworkingdays = rrule.between(new Date(2015, 11, 31), new Date(2016, 0, 2));
+            var options = RRule.parseString(event.getProperty('RRULE').format()[0].substr(6));
+            options.dtstart = event.getProperty('DTSTART').value;
+
+
+            var rrule = new RRule(options);
+
+            var nonworkingdays = rrule.between(new Date(2015, 11, 31, 0,0,0,0), new Date(2016, 0, 2, 0,0,0,0));
+
 
             assert.equal(1, nonworkingdays.length);
         });
