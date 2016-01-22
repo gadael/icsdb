@@ -25,7 +25,7 @@
     "node": "*"
   },
   "scripts": {
-    "test": "mocha tests/",
+    "test": "node node_modules/mocha/bin/mocha tests/",
     "build": "node src/build.js"
   }
 }
