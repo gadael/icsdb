@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/polo2ro/icsdb.svg?branch=master)](https://travis-ci.org/polo2ro/icsdb)
+
 # icsdb
 
 Open repository of usefull calendar ics files
