@@ -20,7 +20,12 @@ dev dependencies are required to rebuild ics with the script
 
     node src/build.js
     
+## Technical notes
 
+some easter based dates require to list all dates because the icalendar spec does not include this kind of properties. the dates are
+generated into a RDATE ical property from year 1970 to 2100.
+
+More generally, all recuring dates start from 1970 or more to prevent some bugs while decoding the events with various icalendar libraries.
 
 ## Others ICS resources
 
