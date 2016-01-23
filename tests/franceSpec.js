@@ -76,7 +76,7 @@ describe('French non working days', function() {
 
             var rrule = new RRule(options);
 
-            var nonworkingdays = rrule.between(new Date(2015, 11, 31, 0,0,0,0), new Date(2016, 0, 2, 0,0,0,0));
+            var nonworkingdays = rrule.between(new Date(2016, 0, 1), new Date(2016, 0, 2), true);
 
 
             assert.equal(1, nonworkingdays.length);
