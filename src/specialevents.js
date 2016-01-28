@@ -9,7 +9,7 @@ var dateEaster = require('date-easter');
  */
 function nextMonday(d) {
     var monday = new Date(d);
-    monday.setDate(monday.getDate() + 7 + 1 - monday.getDay());
+    monday.setDate(monday.getDate() + 1 + monday.getDay());
     return monday;
 }
 
