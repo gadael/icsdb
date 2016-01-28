@@ -65,6 +65,7 @@ describe('French non working days', function() {
 
                 from.setUTCHours(0,0,0,0);
                 to.setUTCHours(0,0,0,0);
+                to.setMilliseconds(to.getMilliseconds()-1);
 
                 for (e=0; e<events.length; e++) {
 
