@@ -55,16 +55,10 @@ describe('French non working days', function() {
             var y, e, from, to, event, rruleSet, nonworkingdays, tests = [];
 
             for (y=2000; y<2050; y++) {
-                /*
-                from = new Date(Date.UTC(y, 0, 1));
-                to = new Date(Date.UTC(1+y, 0, 1));
-                */
 
                 from = new Date(y, 0, 1);
                 to = new Date(1+y, 0, 1);
 
-                //from.setUTCHours(0,0,0,0);
-                //to.setUTCHours(0,0,0,0);
                 to.setMilliseconds(to.getMilliseconds()-1);
 
                 for (e=0; e<events.length; e++) {
