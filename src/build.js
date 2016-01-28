@@ -71,6 +71,7 @@ getIcalendar('france-nonworkingdays.ics', function(ical) {
     var events = ical.icalendar.events();
     specialevents.updateEasterMonday(events, 1970, 2100);
     specialevents.updatePentcostMonday(events, 1970, 2100);
+    specialevents.updateAscent(events, 1970, 2100);
 
     ical.updateEvents();
     ical.save();

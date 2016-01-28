@@ -33,7 +33,7 @@ function updateGoodFriday(events, from, to) {
     });
 
     if (null === goodfriday) {
-        throw new Error('Good friday not found in event list');
+        throw new Error('Good friday not found in events list');
     }
 
 
@@ -73,7 +73,7 @@ function updateEasterMonday(events, from, to) {
     });
 
     if (null === eastermonday) {
-        throw new Error('Easter monday not found in event list');
+        throw new Error('Easter monday not found in events list');
     }
 
 
@@ -88,6 +88,36 @@ function updateEasterMonday(events, from, to) {
     }
 
     eastermonday.setProperty('RDATE', estermondayDates, { VALUE: 'DATE' });
+}
+
+
+
+function updateAscent(events, from, to) {
+    var ascent = null;
+
+    events.forEach(function(event) {
+
+        if ('6dd38994-93cf-4f92-96ff-0d3af8b08276' === event.getProperty('UID').value) {
+            ascent = event;
+        }
+
+    });
+
+    if (null === ascent) {
+        throw new Error('Ascent not found in events list');
+    }
+
+    var e, easterAnd40, ascentDates = [];
+
+    for (var y = from; y< to; y++) {
+        e = dateEaster.gregorianEaster(y);
+
+        easterAnd40 = new Date(e.year, e.month-1, e.day);
+        easterAnd40.setDate(easterAnd40.getDate()+40);
+        ascentDates.push(easterAnd40);
+    }
+
+    ascent.setProperty('RDATE', ascentDates, { VALUE: 'DATE' });
 }
 
 
@@ -135,5 +165,6 @@ function updatePentcostMonday(events, from, to) {
 module.exports = {
     updateGoodFriday: updateGoodFriday,
     updateEasterMonday: updateEasterMonday,
-    updatePentcostMonday: updatePentcostMonday
+    updatePentcostMonday: updatePentcostMonday,
+    updateAscent: updateAscent
 };
