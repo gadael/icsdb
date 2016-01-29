@@ -7,11 +7,11 @@ var assert = require('assert');
 
 
 
-describe('France non working days', function() {
+describe('England and Wales non working days', function() {
 
 
     var IcalFile = require('./icalFile');
-    var file = new IcalFile('en-US/france-nonworkingdays.ics');
+    var file = new IcalFile('en-US/england-wales-nonworkingdays.ics');
 
 
 
@@ -19,7 +19,7 @@ describe('France non working days', function() {
 
         it('get correct number of events for the country', function() {
             var events = file.getNonWorkingDays();
-            assert.equal(10, events.length);
+            assert.equal(8, events.length);
         });
     });
 
