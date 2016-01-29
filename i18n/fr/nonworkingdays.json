@@ -1,13 +1,20 @@
 {
     "France legal holidays": "Les jours fériés en France",
-    "newyearday": "Le Jour de l'An",
+    "England and Wales legal holidays": "Les jours fériés en Angleterre et au pays de Galles",
+    "New Year's Day": "Le Jour de l'An",
     "Easter Monday": "Le lundi de Pâques",
-    "laborday": "La fête du Travail",
-    "ww2end": "Fête de la Victoire 1945",
-    "ascent": "L'Ascension",
-    "pentecostmonday": "Le lundi de Pentecôte",
-    "natday": "La fête nationale",
-    "toussaint": "La Toussaint",
-    "ww1end": "L'Armistice",
-    "Christmas": "Noël"
+    "Labor day": "La fête du Travail",
+    "1945 victory": "Fête de la Victoire 1945",
+    "Ascent": "L'Ascension",
+    "Pentecost monday": "Le lundi de Pentecôte",
+    "The National Day": "La fête nationale",
+    "Toussaint": "La Toussaint",
+    "The Armistice": "L'Armistice",
+    "Christmas": "Noël",
+
+    "Good Friday": "Vendredi saint",
+    "May Day Bank Holiday": "Fête du travail",
+    "Spring Bank Holiday": "Spring Bank Holiday",
+    "Summer Bank Holiday": "Summer Bank Holiday",
+    "Boxing day": "du lendemain de Noël"
 }
