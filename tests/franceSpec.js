@@ -51,30 +51,8 @@ describe('France non working days', function() {
 
 
         describe('have all events every years', function() {
-            var events = file.getNonWorkingDays();
-            var y, e, from, to, event, rruleSet, nonworkingdays, tests = [];
+            var tests = file.getYearIntervalTest();
 
-            for (y=2000; y<2050; y++) {
-
-                from = new Date(y, 0, 1);
-                to = new Date(1+y, 0, 1);
-
-                to.setMilliseconds(to.getMilliseconds()-1);
-
-                for (e=0; e<events.length; e++) {
-
-                    event = events[e];
-
-                    rruleSet = file.getRruleSet(event.getProperty('UID').value);
-                    nonworkingdays = rruleSet.between(from, to, true);
-
-                    tests.push({
-                        summary: event.getProperty('SUMMARY').value,
-                        y: y,
-                        count: nonworkingdays.length
-                    });
-                }
-            }
 
             tests.forEach(function(test) {
                 it(test.summary+' found 1 time in year '+test.y, function() {

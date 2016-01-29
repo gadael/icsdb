@@ -97,4 +97,39 @@ IcalFile.prototype.getRruleSet = function(uid)
 };
 
 
+/**
+ * Get a table with a list of events for each years, each test contain the number of events found
+ * @returns {Array}
+ */
+IcalFile.prototype.getYearIntervalTest = function()
+{
+    var events = this.getNonWorkingDays();
+    var y, e, from, to, event, rruleSet, nonworkingdays, tests = [];
+
+    for (y=2000; y<2050; y++) {
+
+        from = new Date(y, 0, 1);
+        to = new Date(1+y, 0, 1);
+
+        to.setMilliseconds(to.getMilliseconds()-1);
+
+        for (e=0; e<events.length; e++) {
+
+            event = events[e];
+
+            rruleSet = this.getRruleSet(event.getProperty('UID').value);
+            nonworkingdays = rruleSet.between(from, to, true);
+
+            tests.push({
+                summary: event.getProperty('SUMMARY').value,
+                y: y,
+                count: nonworkingdays.length
+            });
+        }
+    }
+
+    return tests;
+};
+
+
 module.exports = IcalFile;
