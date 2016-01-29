@@ -19,7 +19,7 @@ describe('France non working days', function() {
 
         it('get correct number of events for the country', function() {
             var events = file.getNonWorkingDays();
-            assert.equal(10, events.length);
+            assert.equal(11, events.length);
         });
     });
 
