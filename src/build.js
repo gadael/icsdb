@@ -63,31 +63,23 @@ function getIcalendar(path, callback) {
 
 
 
+require('fs').readdir('./data/', function(err, files) {
+    if (err) {
+        throw err;
+    }
 
+    files.forEach(function(filename) {
+        getIcalendar(filename, function(ical) {
 
+            var events = ical.icalendar.events();
+            specialevents.updateGoodFriday(events, 1970, 2100);
+            specialevents.updateEasterMonday(events, 1970, 2100);
+            specialevents.updatePentcostMonday(events, 1970, 2100);
+            specialevents.updateAscent(events, 1970, 2100);
 
-getIcalendar('france-nonworkingdays.ics', function(ical) {
+            ical.updateEvents();
+            ical.save();
 
-    var events = ical.icalendar.events();
-    specialevents.updateEasterMonday(events, 1970, 2100);
-    specialevents.updatePentcostMonday(events, 1970, 2100);
-    specialevents.updateAscent(events, 1970, 2100);
-
-    ical.updateEvents();
-    ical.save();
-
-});
-
-
-
-getIcalendar('england-wales-nonworkingdays.ics', function(ical) {
-
-    var events = ical.icalendar.events();
-    specialevents.updateGoodFriday(events, 1970, 2100);
-    specialevents.updateEasterMonday(events, 1970, 2100);
-
-
-    ical.updateEvents();
-    ical.save();
-
+        });
+    });
 });

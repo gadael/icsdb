@@ -3,6 +3,19 @@
 var dateEaster = require('date-easter');
 
 
+function getEventByUid(events, uid) {
+    events.forEach(function(event) {
+
+        if (uid === event.getProperty('UID').value) {
+            // Easter monday
+            return event;
+        }
+    });
+
+    return null;
+
+}
+
 /**
  * @param {Date} d
  * @return {String}
@@ -22,18 +35,10 @@ function nextMonday(d) {
  */
 function updateGoodFriday(events, from, to) {
 
-    var goodfriday = null;
-
-    events.forEach(function(event) {
-
-        if ('3c46243f-00f8-418f-94cf-4eda72ae7cb2' === event.getProperty('UID').value) {
-            // Easter monday
-            goodfriday = event;
-        }
-    });
+    var goodfriday = getEventByUid(events, '3c46243f-00f8-418f-94cf-4eda72ae7cb2');
 
     if (null === goodfriday) {
-        throw new Error('Good friday not found in events list');
+        return;
     }
 
 
@@ -60,20 +65,10 @@ function updateGoodFriday(events, from, to) {
  */
 function updateEasterMonday(events, from, to) {
 
-    var eastermonday = null;
-
-
-    events.forEach(function(event) {
-
-        if ('5bd21657-4072-4474-8007-4ffd522fea87' === event.getProperty('UID').value) {
-            // Easter monday
-            eastermonday = event;
-        }
-
-    });
+    var eastermonday = getEventByUid(events, '5bd21657-4072-4474-8007-4ffd522fea87');
 
     if (null === eastermonday) {
-        throw new Error('Easter monday not found in events list');
+        return;
     }
 
 
@@ -93,18 +88,10 @@ function updateEasterMonday(events, from, to) {
 
 
 function updateAscent(events, from, to) {
-    var ascent = null;
-
-    events.forEach(function(event) {
-
-        if ('6dd38994-93cf-4f92-96ff-0d3af8b08276' === event.getProperty('UID').value) {
-            ascent = event;
-        }
-
-    });
+    var ascent = getEventByUid(events, '6dd38994-93cf-4f92-96ff-0d3af8b08276');
 
     if (null === ascent) {
-        throw new Error('Ascent not found in events list');
+        return;
     }
 
     var e, easterAnd40, ascentDates = [];
@@ -129,18 +116,10 @@ function updateAscent(events, from, to) {
  */
 function updatePentcostMonday(events, from, to) {
 
-    var pentcostmonday = null;
-
-    events.forEach(function(event) {
-
-        if ('d0357e64-66d6-4dc2-8442-615b176ea782' === event.getProperty('UID').value) {
-            // Pentecost monday
-            pentcostmonday = event;
-        }
-    });
+    var pentcostmonday = getEventByUid(events, 'd0357e64-66d6-4dc2-8442-615b176ea782');
 
     if (null === pentcostmonday) {
-        throw new Error('Pentcost monday not found in event list');
+        return;
     }
 
 
