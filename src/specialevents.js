@@ -4,15 +4,18 @@ var dateEaster = require('date-easter');
 
 
 function getEventByUid(events, uid) {
+
+    var e = null;
+
     events.forEach(function(event) {
 
         if (uid === event.getProperty('UID').value) {
             // Easter monday
-            return event;
+            e = event;
         }
     });
 
-    return null;
+    return e;
 
 }
 
