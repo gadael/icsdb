@@ -2,7 +2,7 @@
 
 # icsdb
 
-Open repository of usefull calendar ics files
+Open repository of static calendar `ICS` files
 
 The purpose of this package is to maintain auto-generated ics files from various sources in the `data/` subfolder. 
 For example, the build script will use a source ics file for french non working days, will translate the summaries 
@@ -12,6 +12,19 @@ subfolder, one file per language.
 ## Using the ics files
 
 Use the **raw** button on the github page to get the link, only files in the build subfolder should be used.
+
+
+### France Non-working days
+
+Metropolitan France
+[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/france-nonworkingdays.ics)  [fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/france-nonworkingdays.ics)
+
+
+
+### United-Kingdoms Non-working days
+
+England and Wales
+[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/england-wales-nonworkingdays.ics)  [fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/england-wales-nonworkingdays.ics) 
 
 
 ## Build ics files
