@@ -17,14 +17,16 @@ Use the **raw** button on the github page to get the link, only files in the bui
 ### France Non-working days
 
 Metropolitan France
-[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/france-nonworkingdays.ics)  [fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/france-nonworkingdays.ics)
+[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/france-nonworkingdays.ics)
+[fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/france-nonworkingdays.ics)
 
 
 
 ### United-Kingdoms Non-working days
 
 England and Wales
-[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/england-wales-nonworkingdays.ics)  [fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/england-wales-nonworkingdays.ics) 
+[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/england-wales-nonworkingdays.ics)
+[fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/england-wales-nonworkingdays.ics) 
 
 
 ## Build ics files
