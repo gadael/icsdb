@@ -11,7 +11,7 @@ describe('England and Wales non working days', function() {
 
 
     var IcalFile = require('./icalFile');
-    var file = new IcalFile('en-US/england-wales-nonworkingdays.ics');
+    var file = new IcalFile('en-US/uk-england-wales-nonworkingdays.ics');
 
 
 
