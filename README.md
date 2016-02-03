@@ -22,7 +22,7 @@ Metropolitan France
 
 
 
-### United-Kingdoms Non-working days
+### United-Kingdom Non-working days
 
 England and Wales
 [en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/england-wales-nonworkingdays.ics)
