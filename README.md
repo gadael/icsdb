@@ -58,6 +58,10 @@ Scotland
 [en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/uk-scotland-nonworkingdays.ics)
 [fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/uk-scotland-nonworkingdays.ics) 
 
+North Ireland
+[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/uk-north-ireland-nonworkingdays.ics)
+[fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/uk-north-ireland-nonworkingdays.ics) 
+
 
 
 ## Build ics files
