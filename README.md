@@ -77,6 +77,8 @@ generated into a RDATE ical property from year 1970 to 2100.
 
 More generally, all recuring dates start from 1970 or more to prevent some bugs while decoding the events with various icalendar libraries.
 
+Similar dates use the same UID property in all calendars
+
 ## Others ICS resources
 
 French school holidays

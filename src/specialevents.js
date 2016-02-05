@@ -36,6 +36,35 @@ function nextMonday(d) {
  * @param {Integer} from    Year
  * @param {Integer} to      Year
  */
+function updateMardiGras(events, from, to) {
+
+    var mardigras = getEventByUid(events, '7ac45e93-a684-4061-a0c7-948a89e358b0');
+
+    if (null === mardigras) {
+        return;
+    }
+
+
+    var e, easter, mardigrasDates = [];
+
+
+    for (var y = from; y< to; y++) {
+        e = dateEaster.gregorianEaster(y);
+        easter = new Date(e.year, e.month-1, e.day);
+        easter.setDate(easter.getDate()-47);
+        mardigrasDates.push(easter);
+    }
+
+    mardigras.setProperty('RDATE', mardigrasDates, { VALUE: 'DATE' });
+}
+
+
+
+/**
+ * @param {Array} events
+ * @param {Integer} from    Year
+ * @param {Integer} to      Year
+ */
 function updateGoodFriday(events, from, to) {
 
     var goodfriday = getEventByUid(events, '3c46243f-00f8-418f-94cf-4eda72ae7cb2');
