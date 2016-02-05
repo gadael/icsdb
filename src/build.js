@@ -62,26 +62,57 @@ function getIcalendar(path, callback) {
 }
 
 
+function processDataFolder() {
+    require('fs').readdir('./data/', function(err, files) {
+        if (err) {
+            throw err;
+        }
 
-require('fs').readdir('./data/', function(err, files) {
-    if (err) {
-        throw err;
-    }
+        files.forEach(function(filename) {
+            getIcalendar(filename, function(ical) {
 
-    files.forEach(function(filename) {
-        getIcalendar(filename, function(ical) {
+                var events = ical.icalendar.events();
 
-            var events = ical.icalendar.events();
-
-            for(var funcName in specialevents) {
-                if (specialevents.hasOwnProperty(funcName)) {
-                    specialevents[funcName](events, 1970, 2100);
+                for(var funcName in specialevents) {
+                    if (specialevents.hasOwnProperty(funcName)) {
+                        specialevents[funcName](events, 1970, 2100);
+                    }
                 }
-            }
 
-            ical.updateEvents();
-            ical.save();
+                ical.updateEvents();
+                ical.save();
 
+            });
         });
     });
-});
+}
+
+
+function processUsStates() {
+    var states = require('./us-states');
+    var latinize = require('latinize');
+
+    states.forEach(function(state) {
+        getIcalendar('us-all-nonworkingdays.ics', function(ical) {
+            ical.filter(function(event) {
+                var categories = event.getProperty('CATEGORIES');
+                if (undefined === categories || categories.value.length === 0) {
+                    return true;
+                }
+
+                if ('-' === categories.value[0][0]) {
+                    return (-1 === categories.value.indexOf('-'+state));
+                }
+
+                return (-1 !== categories.value.indexOf(state));
+            });
+
+            ical.save('us-'+latinize(state.toLowerCase())+'-nonworkingdays.ics');
+        });
+    });
+}
+
+
+
+processDataFolder();
+processUsStates();

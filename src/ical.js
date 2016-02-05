@@ -37,6 +37,24 @@ Ical.prototype.updateEvents = function translate() {
 };
 
 
+Ical.prototype.filter = function filter(test) {
+
+    var ical = this;
+    var icalendar = require('icalendar');
+    var filteredCal = new icalendar.iCalendar();
+
+
+    ical.icalendar.events().forEach(function(event) {
+        if (test(event)) {
+            filteredCal.addComponent(event);
+        }
+    });
+
+    // overwrite current events
+    ical.icalendar = filteredCal;
+};
+
+
 Ical.prototype.translateProperty = function translateProperty(event, propName) {
 
     var t = this.t;
@@ -52,9 +70,14 @@ Ical.prototype.translateProperty = function translateProperty(event, propName) {
 /**
  * Save file to build folder
  */
-Ical.prototype.save = function save() {
+Ical.prototype.save = function save(fname) {
+
+    if (undefined === fname) {
+        fname = this.filename;
+    }
+
     var fs = require('fs');
-    fs.writeFile('./build/'+this.language+'/'+this.filename, this.icalendar.toString(), function(err) {
+    fs.writeFile('./build/'+this.language+'/'+fname, this.icalendar.toString(), function(err) {
         if (err) {
             throw err;
         }

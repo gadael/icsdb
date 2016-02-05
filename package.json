@@ -14,7 +14,8 @@
     "mocha": "~2.3.4",
     "i18next": "~2.0.22",
     "i18next-node-fs-backend": "~0.0.6",
-    "rrule": "git://github.com/jkbrzt/rrule.git#9a540ad5193a5df9542d569c44cb8400b3575cb8"
+    "rrule": "git://github.com/jkbrzt/rrule.git#9a540ad5193a5df9542d569c44cb8400b3575cb8",
+    "latinize": "~0.2.0"
   },
   "repository": {
     "type": "git",
