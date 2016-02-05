@@ -173,9 +173,37 @@ function updatePentcostMonday(events, from, to) {
 }
 
 
+
+
+function updateAfterThanksgiving(events, from, to) {
+
+    function getThanksGiving(year) {
+        var first = new Date(year, 10, 1);
+        return (22 + (11 - first.getDay()) % 7);
+    }
+
+    var afterThanksgiving = getEventByUid(events, '68774dca-ca04-4d39-be28-4401d2dce8af');
+
+    if (null === afterThanksgiving) {
+        return;
+    }
+
+    var serie = [];
+
+    for (var y = from; y< to; y++) {
+        serie.push(new Date(y, 10, 1+ getThanksGiving(y)));
+    }
+
+    afterThanksgiving.setProperty('RDATE', serie, { VALUE: 'DATE' });
+}
+
+
+
 module.exports = {
+    updateMardiGras: updateMardiGras,
     updateGoodFriday: updateGoodFriday,
     updateEasterMonday: updateEasterMonday,
     updatePentcostMonday: updatePentcostMonday,
-    updateAscent: updateAscent
+    updateAscent: updateAscent,
+    updateAfterThanksgiving: updateAfterThanksgiving
 };

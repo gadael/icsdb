@@ -72,10 +72,12 @@ require('fs').readdir('./data/', function(err, files) {
         getIcalendar(filename, function(ical) {
 
             var events = ical.icalendar.events();
-            specialevents.updateGoodFriday(events, 1970, 2100);
-            specialevents.updateEasterMonday(events, 1970, 2100);
-            specialevents.updatePentcostMonday(events, 1970, 2100);
-            specialevents.updateAscent(events, 1970, 2100);
+
+            for(var funcName in specialevents) {
+                if (specialevents.hasOwnProperty(funcName)) {
+                    specialevents[funcName](events, 1970, 2100);
+                }
+            }
 
             ical.updateEvents();
             ical.save();
