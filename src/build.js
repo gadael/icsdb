@@ -115,6 +115,8 @@ function processUsStates() {
                 return (-1 !== categories.value.indexOf(state));
             });
 
+            ical.icalendar.setProperty('X-WR-TIMEZONE', 'UTC');
+            ical.icalendar.setProperty('X-WR-CALNAME', state+' legal holidays');
             ical.save('us-'+latinize(state.toLowerCase())+'-nonworkingdays.ics');
         });
     });
