@@ -62,6 +62,20 @@ function getIcalendar(path, callback) {
 }
 
 
+function updateEvents(ical) {
+
+    var events = ical.icalendar.events();
+
+    for(var funcName in specialevents) {
+        if (specialevents.hasOwnProperty(funcName)) {
+            specialevents[funcName](events, 1970, 2100);
+        }
+    }
+
+    ical.updateEvents();
+}
+
+
 function processDataFolder() {
     require('fs').readdir('./data/', function(err, files) {
         if (err) {
@@ -70,16 +84,7 @@ function processDataFolder() {
 
         files.forEach(function(filename) {
             getIcalendar(filename, function(ical) {
-
-                var events = ical.icalendar.events();
-
-                for(var funcName in specialevents) {
-                    if (specialevents.hasOwnProperty(funcName)) {
-                        specialevents[funcName](events, 1970, 2100);
-                    }
-                }
-
-                ical.updateEvents();
+                updateEvents(ical);
                 ical.save();
 
             });
@@ -94,6 +99,9 @@ function processUsStates() {
 
     states.forEach(function(state) {
         getIcalendar('us-all-nonworkingdays.ics', function(ical) {
+
+            updateEvents(ical);
+
             ical.filter(function(event) {
                 var categories = event.getProperty('CATEGORIES');
                 if (undefined === categories || categories.value.length === 0) {
