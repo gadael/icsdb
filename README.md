@@ -11,56 +11,7 @@ subfolder, one file per language.
 
 ## Using the ics files
 
-Use the **raw** button on the github page to get the link, only files in the build subfolder should be used.
-
-
-### France Non-working days
-
-Metropolitan France
-[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/france-nonworkingdays.ics)
-[fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/france-nonworkingdays.ics)
-
-Guyane
-[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/france-guyane-nonworkingdays.ics)
-[fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/france-guyane-nonworkingdays.ics)
-
-Martinique
-[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/france-martinique-nonworkingdays.ics)
-[fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/france-martinique-nonworkingdays.ics)
-
-Moselle, Bas-Rhin, Haut-Rhin
-[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/france-moselle-rhin-nonworkingdays.ics)
-[fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/france-moselle-rhin-nonworkingdays.ics)
-
-New Caledonia
-[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/france-newcaledonia-nonworkingdays.ics)
-[fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/france-newcaledonia-nonworkingdays.ics)
-
-French Polynesia
-[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/france-polynesia-nonworkingdays.ics)
-[fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/france-polynesia-nonworkingdays.ics)
-
-Reunion
-[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/france-reunion-nonworkingdays.ics)
-[fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/france-reunion-nonworkingdays.ics)
-
-Wallis and Futuna
-[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/france-wallis-futuna-nonworkingdays.ics)
-[fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/france-wallis-futuna-nonworkingdays.ics)
-
-### United-Kingdom Non-working days
-
-England and Wales
-[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/uk-england-wales-nonworkingdays.ics)
-[fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/uk-england-wales-nonworkingdays.ics) 
-
-Scotland
-[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/uk-scotland-nonworkingdays.ics)
-[fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/uk-scotland-nonworkingdays.ics) 
-
-North Ireland
-[en-US](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/uk-north-ireland-nonworkingdays.ics)
-[fr-FR](https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/uk-north-ireland-nonworkingdays.ics) 
+Use the **raw** button on the github page to get the link, only files in the [build](tree/master/build/) subfolder should be used.
 
 
 
