@@ -11,7 +11,7 @@ subfolder, one file per language.
 
 ## Using the ics files
 
-Use the **raw** button on the github page to get the link, only files in the [build](tree/master/build/) subfolder should be used.
+Use the **raw** button on the github page to get the link, only files in the [build](build/) subfolder should be used.
 
 
 
