@@ -174,6 +174,39 @@ function updatePentcostMonday(events, from, to) {
 
 
 
+/**
+ * @param {Array} events
+ * @param {Integer} from    Year
+ * @param {Integer} to      Year
+ */
+function updateCorpusChristi(events, from, to) {
+
+    let corpuschristiEvent = getEventByUid(events, '6e008a20-cdd7-11e5-a837-0800200c9a66');
+
+    if (null === corpuschristiEvent) {
+        return;
+    }
+
+
+    let e, easter;
+    let corpusChristi, corpusChristiDates = [];
+
+
+    for (let y = from; y< to; y++) {
+        e = dateEaster.gregorianEaster(y);
+
+        easter = new Date(e.year, e.month-1, e.day);
+        corpusChristi = new Date(easter);
+        corpusChristi.setDate(corpusChristi.getDate()+60);
+
+        corpusChristiDates.push(nextMonday(corpusChristi));
+    }
+
+    corpuschristiEvent.setProperty('RDATE', corpusChristiDates, { VALUE: 'DATE' });
+}
+
+
+
 
 function updateAfterThanksgiving(events, from, to) {
 
@@ -205,5 +238,6 @@ module.exports = {
     updateEasterMonday: updateEasterMonday,
     updatePentcostMonday: updatePentcostMonday,
     updateAscent: updateAscent,
+    updateCorpusChristi: updateCorpusChristi,
     updateAfterThanksgiving: updateAfterThanksgiving
 };

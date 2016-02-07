@@ -38,6 +38,14 @@ Wallis and Futuna legal holidays
 
 
 
+## ireland nonworkingdays
+
+France legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/ireland-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/ireland-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+
+
 ## uk nonworkingdays
 
 England and Wales legal holidays

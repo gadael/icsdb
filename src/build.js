@@ -186,6 +186,8 @@ function createReadme() {
         let md = '';
         let ChapterPromises = [];
 
+        console.log(chapters);
+
         for(let title in chapters) {
             if (chapters.hasOwnProperty(title)) {
                 let chapterPromise = new Promise((resolve, reject) => {
