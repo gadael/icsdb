@@ -38,9 +38,17 @@ Wallis and Futuna legal holidays
 
 
 
+## germany nonworkingdays
+
+Germany legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/germany-all-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/germany-all-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+
+
 ## ireland nonworkingdays
 
-France legal holidays
+Ireland legal holidays
 <a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/ireland-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
 <a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/ireland-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
 
