@@ -1,6 +1,5 @@
 'use strict';
 
-var specialevents = require('./specialevents');
 
 
 /**
@@ -8,11 +7,11 @@ var specialevents = require('./specialevents');
  */
 function getIcalendar(path, callback) {
 
-    var languages = ['fr-FR', 'en-US'];
+    let languages = ['fr-FR', 'en-US'];
 
-    var fs = require('fs');
-    var icalendar = require('icalendar');
-    var Ical = require('./ical');
+    let fs = require('fs');
+    let icalendar = require('icalendar');
+    let Ical = require('./ical');
 
     fs.readFile('./data/'+path, {
         encoding: 'UTF-8'
@@ -21,11 +20,11 @@ function getIcalendar(path, callback) {
             throw err;
         }
 
-        var i18next = require('i18next');
-        var Backend = require('i18next-node-fs-backend');
+        let i18next = require('i18next');
+        let Backend = require('i18next-node-fs-backend');
 
-        var splited = require('path').basename(path, '.ics').split('-');
-        var namespace = splited[splited.length-1];
+        let splited = require('path').basename(path, '.ics').split('-');
+        let namespace = splited[splited.length-1];
 
         i18next
             .use(Backend)
@@ -47,7 +46,7 @@ function getIcalendar(path, callback) {
                     throw err;
                 }
 
-                var filename = require('path').basename(path);
+                let filename = require('path').basename(path);
 
                 languages.forEach(function(lang) {
                     callback(new Ical(filename, namespace, icalendar.parse_calendar(data), lang, t));
@@ -64,9 +63,10 @@ function getIcalendar(path, callback) {
 
 function updateEvents(ical) {
 
-    var events = ical.icalendar.events();
+    let specialevents = require('./specialevents');
+    let events = ical.icalendar.events();
 
-    for(var funcName in specialevents) {
+    for(let funcName in specialevents) {
         if (specialevents.hasOwnProperty(funcName)) {
             specialevents[funcName](events, 1970, 2100);
         }
@@ -83,10 +83,9 @@ function processDataFolder() {
         }
 
         files.forEach(filename => {
-            getIcalendar(filename, function(ical) {
+            getIcalendar(filename, ical => {
                 updateEvents(ical);
                 ical.save();
-
             });
         });
     });
@@ -94,8 +93,8 @@ function processDataFolder() {
 
 
 function processUsStates() {
-    var states = require('./us-states');
-    var latinize = require('latinize');
+    let states = require('./us-states');
+    let latinize = require('latinize');
 
     states.forEach((state) => {
         getIcalendar('us-all-nonworkingdays.ics', function(ical) {
@@ -103,7 +102,7 @@ function processUsStates() {
             updateEvents(ical);
 
             ical.filter((event) => {
-                var categories = event.getProperty('CATEGORIES');
+                let categories = event.getProperty('CATEGORIES');
                 if (undefined === categories || categories.value.length === 0) {
                     return true;
                 }
@@ -123,18 +122,21 @@ function processUsStates() {
 }
 
 
+/**
+ * Markdown for one calendar
+ * @param   {String} filename
+ * @returns {Promise}
+ */
 function getCalendarMarkdown(filename) {
 
-    var fs = require('fs');
-    var icalendar = require('icalendar');
+    let fs = require('fs');
+    let icalendar = require('icalendar');
 
 
     const us = '<img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" />';
     const fr = '<img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" />';
 
     const buildPath = 'https://raw.githubusercontent.com/polo2ro/icsdb/master/build/';
-
-    //[![Foo](http://www.google.com.au/images/nav_logo7.png)](http://google.com.au/)
 
     return new Promise(function(resolve, reject) {
 
@@ -145,9 +147,9 @@ function getCalendarMarkdown(filename) {
                 return reject(err);
             }
 
-            var cal = icalendar.parse_calendar(data);
+            let cal = icalendar.parse_calendar(data);
 
-            var md = cal.getProperty('X-WR-CALNAME').value+'\n';
+            let md = cal.getProperty('X-WR-CALNAME').value+'\n';
             md += '<a href="'+buildPath+'en-US/'+filename+'">'+us+'</a>\n';
             md += '<a href="'+buildPath+'fr-FR/'+filename+'">'+fr+'</a>\n';
             md += '\n';
@@ -161,18 +163,18 @@ function getCalendarMarkdown(filename) {
 
 
 function createReadme() {
-    var fs = require('fs');
+    let fs = require('fs');
 
     fs.readdir('./build/en-US/', (err, files) => {
         if (err) {
             throw err;
         }
 
-        var chapters = {};
+        let chapters = {};
 
         files.forEach(filename => {
-            var f = filename.split('.')[0].split('-');
-            var chaptitle = f[0]+' '+f[f.length-1];
+            let f = filename.split('.')[0].split('-');
+            let chaptitle = f[0]+' '+f[f.length-1];
 
             if (undefined === chapters[chaptitle]) {
                 chapters[chaptitle] = [];
@@ -181,16 +183,16 @@ function createReadme() {
             chapters[chaptitle].push(filename);
         });
 
-        var md = '';
-        var ChapterPromises = [];
+        let md = '';
+        let ChapterPromises = [];
 
-        for(var title in chapters) {
+        for(let title in chapters) {
             if (chapters.hasOwnProperty(title)) {
-                var chapterPromise = new Promise((resolve, reject) => {
+                let chapterPromise = new Promise((resolve, reject) => {
 
-                    var promises = [];
+                    let promises = [];
 
-                    var chmd = '## '+title+'\n\n';
+                    let chmd = '## '+title+'\n\n';
                     chapters[title].forEach(filename => {
                         promises.push(getCalendarMarkdown(filename));
                     });

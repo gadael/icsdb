@@ -17,7 +17,7 @@ function Ical(filename, namespace, icalendar, language, t) {
  */
 Ical.prototype.updateEvents = function translate() {
 
-    var ical = this;
+    let ical = this;
 
     ical.icalendar.events().forEach(function(event) {
 
@@ -29,7 +29,7 @@ Ical.prototype.updateEvents = function translate() {
     });
 
 
-    var calName = ical.icalendar.getProperty('X-WR-CALNAME');
+    let calName = ical.icalendar.getProperty('X-WR-CALNAME');
     if (undefined !== calName.value) {
         ical.icalendar.setProperty('X-WR-CALNAME', ical.t(calName.value, { ns:  ical.namespace, lng: ical.language }));
     }
@@ -39,9 +39,9 @@ Ical.prototype.updateEvents = function translate() {
 
 Ical.prototype.filter = function filter(test) {
 
-    var ical = this;
-    var icalendar = require('icalendar');
-    var filteredCal = new icalendar.iCalendar();
+    let ical = this;
+    let icalendar = require('icalendar');
+    let filteredCal = new icalendar.iCalendar();
 
 
     ical.icalendar.events().forEach(function(event) {
@@ -57,9 +57,9 @@ Ical.prototype.filter = function filter(test) {
 
 Ical.prototype.translateProperty = function translateProperty(event, propName) {
 
-    var t = this.t;
+    let t = this.t;
 
-    var property = event.getProperty(propName);
+    let property = event.getProperty(propName);
     if (undefined !== property && null !== property.value && '' !== property.value) {
         event.setProperty(propName, t(property.value, { ns:  this.namespace, lng: this.language }));
     }
@@ -76,7 +76,7 @@ Ical.prototype.save = function save(fname) {
         fname = this.filename;
     }
 
-    var fs = require('fs');
+    let fs = require('fs');
     fs.writeFile('./build/'+this.language+'/'+fname, this.icalendar.toString(), function(err) {
         if (err) {
             throw err;

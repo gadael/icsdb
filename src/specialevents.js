@@ -1,11 +1,11 @@
 'use strict';
 
-var dateEaster = require('date-easter');
+let dateEaster = require('date-easter');
 
 
 function getEventByUid(events, uid) {
 
-    var e = null;
+    let e = null;
 
     events.forEach(function(event) {
 
@@ -24,7 +24,7 @@ function getEventByUid(events, uid) {
  * @return {String}
  */
 function nextMonday(d) {
-    var monday = new Date(d);
+    let monday = new Date(d);
     monday.setDate(monday.getDate() + 1 + monday.getDay());
     return monday;
 }
@@ -38,17 +38,17 @@ function nextMonday(d) {
  */
 function updateMardiGras(events, from, to) {
 
-    var mardigras = getEventByUid(events, '7ac45e93-a684-4061-a0c7-948a89e358b0');
+    let mardigras = getEventByUid(events, '7ac45e93-a684-4061-a0c7-948a89e358b0');
 
     if (null === mardigras) {
         return;
     }
 
 
-    var e, easter, mardigrasDates = [];
+    let e, easter, mardigrasDates = [];
 
 
-    for (var y = from; y< to; y++) {
+    for (let y = from; y< to; y++) {
         e = dateEaster.gregorianEaster(y);
         easter = new Date(e.year, e.month-1, e.day);
         easter.setDate(easter.getDate()-47);
@@ -67,17 +67,17 @@ function updateMardiGras(events, from, to) {
  */
 function updateGoodFriday(events, from, to) {
 
-    var goodfriday = getEventByUid(events, '3c46243f-00f8-418f-94cf-4eda72ae7cb2');
+    let goodfriday = getEventByUid(events, '3c46243f-00f8-418f-94cf-4eda72ae7cb2');
 
     if (null === goodfriday) {
         return;
     }
 
 
-    var e, easter, goodfridayDates = [];
+    let e, easter, goodfridayDates = [];
 
 
-    for (var y = from; y< to; y++) {
+    for (let y = from; y< to; y++) {
         e = dateEaster.gregorianEaster(y);
         easter = new Date(e.year, e.month-1, e.day);
         easter.setDate(easter.getDate()-3);
@@ -97,17 +97,17 @@ function updateGoodFriday(events, from, to) {
  */
 function updateEasterMonday(events, from, to) {
 
-    var eastermonday = getEventByUid(events, '5bd21657-4072-4474-8007-4ffd522fea87');
+    let eastermonday = getEventByUid(events, '5bd21657-4072-4474-8007-4ffd522fea87');
 
     if (null === eastermonday) {
         return;
     }
 
 
-    var e, easter, estermondayDates = [];
+    let e, easter, estermondayDates = [];
 
 
-    for (var y = from; y< to; y++) {
+    for (let y = from; y< to; y++) {
         e = dateEaster.gregorianEaster(y);
 
         easter = new Date(e.year, e.month-1, e.day);
@@ -120,15 +120,15 @@ function updateEasterMonday(events, from, to) {
 
 
 function updateAscent(events, from, to) {
-    var ascent = getEventByUid(events, '6dd38994-93cf-4f92-96ff-0d3af8b08276');
+    let ascent = getEventByUid(events, '6dd38994-93cf-4f92-96ff-0d3af8b08276');
 
     if (null === ascent) {
         return;
     }
 
-    var e, easterAnd40, ascentDates = [];
+    let e, easterAnd40, ascentDates = [];
 
-    for (var y = from; y< to; y++) {
+    for (let y = from; y< to; y++) {
         e = dateEaster.gregorianEaster(y);
 
         easterAnd40 = new Date(e.year, e.month-1, e.day);
@@ -148,18 +148,18 @@ function updateAscent(events, from, to) {
  */
 function updatePentcostMonday(events, from, to) {
 
-    var pentcostmonday = getEventByUid(events, 'd0357e64-66d6-4dc2-8442-615b176ea782');
+    let pentcostmonday = getEventByUid(events, 'd0357e64-66d6-4dc2-8442-615b176ea782');
 
     if (null === pentcostmonday) {
         return;
     }
 
 
-    var e, easter;
-    var pentcost, pentcostmondayDates = [];
+    let e, easter;
+    let pentcost, pentcostmondayDates = [];
 
 
-    for (var y = from; y< to; y++) {
+    for (let y = from; y< to; y++) {
         e = dateEaster.gregorianEaster(y);
 
         easter = new Date(e.year, e.month-1, e.day);
@@ -178,19 +178,19 @@ function updatePentcostMonday(events, from, to) {
 function updateAfterThanksgiving(events, from, to) {
 
     function getThanksGiving(year) {
-        var first = new Date(year, 10, 1);
+        let first = new Date(year, 10, 1);
         return (22 + (11 - first.getDay()) % 7);
     }
 
-    var afterThanksgiving = getEventByUid(events, '68774dca-ca04-4d39-be28-4401d2dce8af');
+    let afterThanksgiving = getEventByUid(events, '68774dca-ca04-4d39-be28-4401d2dce8af');
 
     if (null === afterThanksgiving) {
         return;
     }
 
-    var serie = [];
+    let serie = [];
 
-    for (var y = from; y< to; y++) {
+    for (let y = from; y< to; y++) {
         serie.push(new Date(y, 10, 1+ getThanksGiving(y)));
     }
 
