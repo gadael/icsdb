@@ -19,30 +19,53 @@ function updateEvents(ical) {
 }
 
 
+
+/**
+ *
+ *
+ * @returns {Promise}
+ */
 function processDataFolder() {
     let getIcalendar = require('./geticalendar');
 
-    require('fs').readdir('./data/', (err, files) => {
-        if (err) {
-            throw err;
-        }
+    let allFilesSaved = new Promise((resolve, reject) => {
 
-        files.forEach(filename => {
-            getIcalendar(filename, ical => {
-                updateEvents(ical);
-                ical.save();
+        require('fs').readdir('./data/', (err, files) => {
+            if (err) {
+                return reject(err);
+            }
+
+            let promises = [];
+
+            files.forEach(filename => {
+                getIcalendar(filename, ical => {
+                    updateEvents(ical);
+                    promises.push(ical.save());
+                });
             });
+
+            resolve(Promise.all(promises));
         });
     });
 
+    let localitiesCreated = new Promise((resolve, reject) => {
 
-    let localities = require('./localities');
+        allFilesSaved.then(r => {
 
-    let usStates = require('./us-states');
-    localities('us-all-nonworkingdays.ics', usStates, updateEvents);
+            let promises = [];
+            let localities = require('./localities');
 
-    let germanyStates = require('./germany-states');
-    localities('germany-all-nonworkingdays.ics', germanyStates, updateEvents);
+            let usStates = require('./us-states');
+            promises.push(localities('us-all-nonworkingdays.ics', usStates, updateEvents));
+
+            let germanyStates = require('./germany-states');
+            promises.push(localities('germany-all-nonworkingdays.ics', germanyStates, updateEvents));
+
+            resolve(Promise.all(promises));
+        });
+    });
+
+    return localitiesCreated;
 }
 
 
@@ -64,7 +87,7 @@ function getCalendarMarkdown(filename) {
 
     const buildPath = 'https://raw.githubusercontent.com/polo2ro/icsdb/master/build/';
 
-    return new Promise(function(resolve, reject) {
+    return new Promise((resolve, reject) => {
 
         fs.readFile('./build/en-US/'+filename, {
             encoding: 'UTF-8'
@@ -108,6 +131,7 @@ function createReadme() {
 
             chapters[chaptitle].push(filename);
         });
+
 
         let md = '';
         let ChapterPromises = [];
@@ -155,5 +179,5 @@ function createReadme() {
 
 
 
-processDataFolder();
-createReadme();
+processDataFolder().then(createReadme);
+

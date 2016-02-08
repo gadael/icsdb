@@ -44,7 +44,7 @@ Ical.prototype.filter = function filter(test) {
     let filteredCal = new icalendar.iCalendar();
 
 
-    ical.icalendar.events().forEach(function(event) {
+    ical.icalendar.events().forEach(event => {
         if (test(event)) {
             filteredCal.addComponent(event);
         }
@@ -69,6 +69,7 @@ Ical.prototype.translateProperty = function translateProperty(event, propName) {
 
 /**
  * Save file to build folder
+ * @return {Promise}
  */
 Ical.prototype.save = function save(fname) {
 
@@ -77,11 +78,18 @@ Ical.prototype.save = function save(fname) {
     }
 
     let fs = require('fs');
-    fs.writeFile('./build/'+this.language+'/'+fname, this.icalendar.toString(), function(err) {
-        if (err) {
-            throw err;
-        }
+
+    return new Promise((resolve, reject) => {
+        fs.writeFile('./build/'+this.language+'/'+fname, this.icalendar.toString(), function(err) {
+            if (err) {
+                return reject(err);
+            }
+
+            resolve();
+        });
     });
+
+
 
 };
 

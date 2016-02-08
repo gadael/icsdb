@@ -1,9 +1,18 @@
 'use strict';
 
-module.exports = function processUsStates(filename, states, updateEvents) {
+/**
+ * Create one file per locality
+ * @param   {string}   filename
+ * @param   {Array}    states
+ * @param   {Function} updateEvents
+ * @returns {Promise}
+ */
+module.exports = function localities(filename, states, updateEvents) {
 
     let latinize = require('latinize');
     let getIcalendar = require('./geticalendar');
+
+    var promises = [];
 
     states.forEach((state) => {
 
@@ -11,7 +20,7 @@ module.exports = function processUsStates(filename, states, updateEvents) {
 
             updateEvents(ical);
 
-            ical.filter((event) => {
+            ical.filter(event => {
 
                 let categories = event.getProperty('CATEGORIES');
                 if (undefined === categories || categories.value.length === 0) {
@@ -27,7 +36,9 @@ module.exports = function processUsStates(filename, states, updateEvents) {
 
             ical.icalendar.setProperty('X-WR-TIMEZONE', 'UTC');
             ical.icalendar.setProperty('X-WR-CALNAME', state+' legal holidays');
-            ical.save(filename.split('-')[0]+'-'+latinize(state.toLowerCase())+'-nonworkingdays.ics');
+            promises.push(ical.save(filename.split('-')[0]+'-'+latinize(state.toLowerCase())+'-nonworkingdays.ics'));
         });
     });
+
+    return Promise.all(promises);
 };
