@@ -6,11 +6,13 @@ module.exports = function processUsStates(filename, states, updateEvents) {
     let getIcalendar = require('./geticalendar');
 
     states.forEach((state) => {
+
         getIcalendar(filename, function(ical) {
 
             updateEvents(ical);
 
             ical.filter((event) => {
+
                 let categories = event.getProperty('CATEGORIES');
                 if (undefined === categories || categories.value.length === 0) {
                     return true;
@@ -25,7 +27,7 @@ module.exports = function processUsStates(filename, states, updateEvents) {
 
             ical.icalendar.setProperty('X-WR-TIMEZONE', 'UTC');
             ical.icalendar.setProperty('X-WR-CALNAME', state+' legal holidays');
-            ical.save('us-'+latinize(state.toLowerCase())+'-nonworkingdays.ics');
+            ical.save(filename.split('-')[0]+'-'+latinize(state.toLowerCase())+'-nonworkingdays.ics');
         });
     });
 };
