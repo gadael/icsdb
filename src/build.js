@@ -2,63 +2,6 @@
 
 
 
-/**
- * Get icalendar object, one per language
- */
-function getIcalendar(path, callback) {
-
-    let languages = ['fr-FR', 'en-US'];
-
-    let fs = require('fs');
-    let icalendar = require('icalendar');
-    let Ical = require('./ical');
-
-    fs.readFile('./data/'+path, {
-        encoding: 'UTF-8'
-    }, function (err, data) {
-        if (err) {
-            throw err;
-        }
-
-        let i18next = require('i18next');
-        let Backend = require('i18next-node-fs-backend');
-
-        let splited = require('path').basename(path, '.ics').split('-');
-        let namespace = splited[splited.length-1];
-
-        i18next
-            .use(Backend)
-            .init({
-            lng: 'en-US',
-            fallbackLng: 'en-US',
-            ns: [namespace],
-            backend: {
-                loadPath: 'i18n/{{lng}}/{{ns}}.json'
-            }
-        }, function(err, t) {
-
-            if (err) {
-                throw err;
-            }
-
-            i18next.loadLanguages(languages, err => {
-                if (err) {
-                    throw err;
-                }
-
-                let filename = require('path').basename(path);
-
-                languages.forEach(function(lang) {
-                    callback(new Ical(filename, namespace, icalendar.parse_calendar(data), lang, t));
-                });
-            });
-
-        });
-
-
-    });
-
-}
 
 
 function updateEvents(ical) {
@@ -77,6 +20,8 @@ function updateEvents(ical) {
 
 
 function processDataFolder() {
+    let getIcalendar = require('./geticalendar');
+
     require('fs').readdir('./data/', (err, files) => {
         if (err) {
             throw err;
@@ -89,37 +34,18 @@ function processDataFolder() {
             });
         });
     });
+
+
+    let localities = require('./localities');
+
+    let usStates = require('./us-states');
+    localities('us-all-nonworkingdays.ics', usStates, updateEvents);
+
+    let germanyStates = require('./germany-states');
+    localities('germany-all-nonworkingdays.ics', germanyStates, updateEvents);
 }
 
 
-function processUsStates() {
-    let states = require('./us-states');
-    let latinize = require('latinize');
-
-    states.forEach((state) => {
-        getIcalendar('us-all-nonworkingdays.ics', function(ical) {
-
-            updateEvents(ical);
-
-            ical.filter((event) => {
-                let categories = event.getProperty('CATEGORIES');
-                if (undefined === categories || categories.value.length === 0) {
-                    return true;
-                }
-
-                if ('-' === categories.value[0][0]) {
-                    return (-1 === categories.value.indexOf('-'+state));
-                }
-
-                return (-1 !== categories.value.indexOf(state));
-            });
-
-            ical.icalendar.setProperty('X-WR-TIMEZONE', 'UTC');
-            ical.icalendar.setProperty('X-WR-CALNAME', state+' legal holidays');
-            ical.save('us-'+latinize(state.toLowerCase())+'-nonworkingdays.ics');
-        });
-    });
-}
 
 
 /**
@@ -230,5 +156,4 @@ function createReadme() {
 
 
 processDataFolder();
-processUsStates();
 createReadme();
