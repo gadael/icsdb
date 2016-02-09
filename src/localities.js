@@ -12,7 +12,7 @@ module.exports = function localities(filename, states, updateEvents) {
     let latinize = require('latinize');
     let getIcalendar = require('./geticalendar');
 
-    var promises = [];
+    let promises = [];
 
     states.forEach((state) => {
 

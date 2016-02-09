@@ -16,15 +16,15 @@ function IcalFile(filePath)
  */
 IcalFile.prototype.getNonWorkingDays = function()
 {
-    var fs = require('fs');
-    var icalendar = require('icalendar');
+    let fs = require('fs');
+    let icalendar = require('icalendar');
 
-    var data = fs.readFileSync(
+    let data = fs.readFileSync(
         'build/'+this.filePath,
         { encoding: 'UTF-8' }
     );
 
-    var ical = icalendar.parse_calendar(data);
+    let ical = icalendar.parse_calendar(data);
 
     return ical.events();
 };
@@ -37,8 +37,8 @@ IcalFile.prototype.getNonWorkingDays = function()
  */
 IcalFile.prototype.getVEvent = function(uid)
 {
-    var events = this.getNonWorkingDays();
-    for(var i=0; i<events.length; i++) {
+    let events = this.getNonWorkingDays();
+    for(let i=0; i<events.length; i++) {
         if (uid === events[i].getProperty('UID').value) {
             return events[i];
         }
@@ -58,9 +58,9 @@ IcalFile.prototype.getRrule = function(event)
         return null;
     }
 
-    var RRule = require('rrule').RRule;
+    let RRule = require('rrule').RRule;
 
-    var options = RRule.parseString(event.getProperty('RRULE').format()[0].substr(6));
+    let options = RRule.parseString(event.getProperty('RRULE').format()[0].substr(6));
     options.dtstart = event.getProperty('DTSTART').value;
 
     return new RRule(options);
@@ -74,17 +74,17 @@ IcalFile.prototype.getRrule = function(event)
  */
 IcalFile.prototype.getRruleSet = function(uid)
 {
-    var event = this.getVEvent(uid);
-    var rrule = this.getRrule(event);
+    let event = this.getVEvent(uid);
+    let rrule = this.getRrule(event);
 
-    var RRuleSet = require('rrule').RRuleSet;
+    let RRuleSet = require('rrule').RRuleSet;
 
-    var rruleSet = new RRuleSet();
+    let rruleSet = new RRuleSet();
     if (null !== rrule) {
         rruleSet.rrule(rrule);
     }
 
-    var rdate = event.getProperty('RDATE');
+    let rdate = event.getProperty('RDATE');
     if (undefined !== rdate) {
 
         rdate.value.forEach(function(d) {
@@ -103,8 +103,8 @@ IcalFile.prototype.getRruleSet = function(uid)
  */
 IcalFile.prototype.getYearIntervalTest = function()
 {
-    var events = this.getNonWorkingDays();
-    var y, e, from, to, event, rruleSet, nonworkingdays, tests = [];
+    let events = this.getNonWorkingDays();
+    let y, e, from, to, event, rruleSet, nonworkingdays, tests = [];
 
     for (y=2000; y<2050; y++) {
 

@@ -1,6 +1,7 @@
 module.exports = [
     'Baden-Württemberg',
     'Bavaria',
+    'Augsburg in Bavaria',
     'Berlin',
     'Brandenburg',
     'Bremen',
@@ -14,5 +15,6 @@ module.exports = [
     'Saxony',
     'Saxony-Anhalt',
     'Schleswig-Holstein',
-    'Thuringia'
+    'Thuringia',
+    'Eichsfeld Catholic district'
 ];

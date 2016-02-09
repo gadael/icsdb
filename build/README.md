@@ -1,3 +1,11 @@
+## belgium nonworkingdays
+
+Belgium legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/belgium-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/belgium-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+
+
 ## france nonworkingdays
 
 Guadeloupe legal holidays
@@ -44,6 +52,10 @@ Germany legal holidays
 <a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/germany-all-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
 <a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/germany-all-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
 
+Augsburg in Bavaria legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/germany-augsburg in bavaria-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/germany-augsburg in bavaria-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
 Baden-Württemberg legal holidays
 <a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/germany-baden-wurttemberg-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
 <a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/germany-baden-wurttemberg-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
@@ -63,6 +75,10 @@ Brandenburg legal holidays
 Bremen legal holidays
 <a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/germany-bremen-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
 <a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/germany-bremen-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Eichsfeld Catholic district legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/germany-eichsfeld catholic district-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/germany-eichsfeld catholic district-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
 
 Hamburg legal holidays
 <a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/germany-hamburg-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
