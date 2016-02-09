@@ -37,5 +37,3 @@ French school holidays
 http://www.education.gouv.fr/download.php?file=http%3A%2F%2Fcache.media.education.gouv.fr%2Fics%2FCalendrier_Scolaire_Zones_A_B_C.ics
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/polo2ro/icsdb/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
