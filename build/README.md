@@ -134,6 +134,118 @@ Ireland legal holidays
 
 
 
+## switzerland nonworkingdays
+
+Aargau legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-aargau-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-aargau-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Switzerland legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-all-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-all-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Appenzell Ausserrhoden legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-appenzell ausserrhoden-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-appenzell ausserrhoden-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Appenzell Innerrhoden legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-appenzell innerrhoden-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-appenzell innerrhoden-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Basel-Landschaft legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-basel-landschaft-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-basel-landschaft-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Basel-Stadt legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-basel-stadt-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-basel-stadt-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Bern legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-bern-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-bern-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Fribourg legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-fribourg-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-fribourg-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Geneva legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-geneva-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-geneva-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Glarus legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-glarus-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-glarus-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Graubünden legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-graubunden-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-graubunden-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Jura legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-jura-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-jura-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Luzern legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-luzern-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-luzern-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Neuchâtel legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-neuchatel-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-neuchatel-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Nidwalden legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-nidwalden-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-nidwalden-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Obwalden legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-obwalden-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-obwalden-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Schaffhausen legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-schaffhausen-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-schaffhausen-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Schwyz legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-schwyz-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-schwyz-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Solothurn legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-solothurn-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-solothurn-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+St Gallen legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-st gallen-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-st gallen-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Thurgau legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-thurgau-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-thurgau-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Ticino legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-ticino-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-ticino-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Uri legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-uri-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-uri-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Valais legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-valais-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-valais-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Vaud legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-vaud-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-vaud-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Zug legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-zug-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-zug-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+Zürich legal holidays
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/en-US/switzerland-zurich-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" /></a>
+<a href="https://raw.githubusercontent.com/polo2ro/icsdb/master/build/fr-FR/switzerland-zurich-nonworkingdays.ics"><img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" /></a>
+
+
+
 ## uk nonworkingdays
 
 England and Wales legal holidays

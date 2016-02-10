@@ -31,6 +31,11 @@ function nextMonday(d) {
 
 
 
+
+
+
+
+
 /**
  * @param {Array} events
  * @param {Integer} from    Year
@@ -56,6 +61,36 @@ function updateMardiGras(events, from, to) {
     }
 
     mardigras.setProperty('RDATE', mardigrasDates, { VALUE: 'DATE' });
+}
+
+
+/**
+ * @param {Array} events
+ * @param {Integer} from    Year
+ * @param {Integer} to      Year
+ */
+function updateMaudyThursday(events, from, to)
+{
+
+
+    let maudyThursday = getEventByUid(events, '8986cec1-8713-46ac-83a5-1b07fd9b2cf6');
+
+    if (null === maudyThursday) {
+        return;
+    }
+
+
+    let e, easter, maudyDates = [];
+
+
+    for (let y = from; y< to; y++) {
+        e = dateEaster.gregorianEaster(y);
+        easter = new Date(e.year, e.month-1, e.day);
+        easter.setDate(easter.getDate()-4);
+        maudyDates.push(easter);
+    }
+
+    maudyThursday.setProperty('RDATE', maudyDates, { VALUE: 'DATE' });
 }
 
 
@@ -85,6 +120,29 @@ function updateGoodFriday(events, from, to) {
     }
 
     goodfriday.setProperty('RDATE', goodfridayDates, { VALUE: 'DATE' });
+}
+
+
+function updateHolySaturday(events, from, to) {
+
+    let holySaturday = getEventByUid(events, '540f945f-864c-46ad-b72d-caeeb32b7b21');
+
+    if (null === holySaturday) {
+        return;
+    }
+
+
+    let e, easter, holyDates = [];
+
+
+    for (let y = from; y< to; y++) {
+        e = dateEaster.gregorianEaster(y);
+        easter = new Date(e.year, e.month-1, e.day);
+        easter.setDate(easter.getDate()-2);
+        holyDates.push(easter);
+    }
+
+    holySaturday.setProperty('RDATE', holyDates, { VALUE: 'DATE' });
 }
 
 
@@ -234,7 +292,9 @@ function updateAfterThanksgiving(events, from, to) {
 
 module.exports = {
     updateMardiGras: updateMardiGras,
+    updateMaudyThursday: updateMaudyThursday,
     updateGoodFriday: updateGoodFriday,
+    updateHolySaturday: updateHolySaturday,
     updateEasterMonday: updateEasterMonday,
     updatePentcostMonday: updatePentcostMonday,
     updateAscent: updateAscent,

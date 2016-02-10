@@ -61,6 +61,9 @@ function processDataFolder() {
             let germanyStates = require('./germany-states');
             promises.push(localities('germany-all-nonworkingdays.ics', germanyStates, updateEvents));
 
+            let switzerlandCantons = require('./switzerland-cantons');
+            promises.push(localities('switzerland-all-nonworkingdays.ics', switzerlandCantons, updateEvents));
+
             resolve(Promise.all(promises));
         });
     });
