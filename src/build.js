@@ -101,7 +101,7 @@ function getCalendarMarkdown(filename) {
 
             let cal = icalendar.parse_calendar(data);
 
-            let md = cal.getProperty('X-WR-CALNAME').value+'\n';
+            let md = cal.getProperty('X-WR-CALNAME').value+'<br />\n';
             md += '<a href="'+buildPath+'en-US/'+filename+'">'+us+'</a>\n';
             md += '<a href="'+buildPath+'fr-FR/'+filename+'">'+fr+'</a>\n';
             md += '\n';
