@@ -1,6 +1,9 @@
 'use strict';
 
 
+let missing = [];
+
+
 function Ical(filename, namespace, icalendar, language, t) {
 
     this.filename = filename;
@@ -11,11 +14,24 @@ function Ical(filename, namespace, icalendar, language, t) {
 }
 
 
+Ical.prototype.translate = function(text, options) {
+
+    let translated = this.t(text, options);
+
+    if (translated === text && options.lng !== 'en-US' && -1 === missing.indexOf(text)) {
+        console.warn('Missing translation: "'+text+'"');
+        missing.push(text);
+    }
+
+    return translated;
+};
+
+
 /**
  * Translate strings in icalendar object
  *
  */
-Ical.prototype.updateEvents = function translate() {
+Ical.prototype.updateEvents = function updateEvents() {
 
     let ical = this;
 
@@ -31,7 +47,7 @@ Ical.prototype.updateEvents = function translate() {
 
     let calName = ical.icalendar.getProperty('X-WR-CALNAME');
     if (undefined !== calName.value) {
-        ical.icalendar.setProperty('X-WR-CALNAME', ical.t(calName.value, { ns:  ical.namespace, lng: ical.language }));
+        ical.icalendar.setProperty('X-WR-CALNAME', ical.translate(calName.value, { ns:  ical.namespace, lng: ical.language }));
     }
 
 };
@@ -57,11 +73,11 @@ Ical.prototype.filter = function filter(test) {
 
 Ical.prototype.translateProperty = function translateProperty(event, propName) {
 
-    let t = this.t;
+    let ical = this;
 
     let property = event.getProperty(propName);
     if (undefined !== property && null !== property.value && '' !== property.value) {
-        event.setProperty(propName, t(property.value, { ns:  this.namespace, lng: this.language }));
+        event.setProperty(propName, ical.translate(property.value, { ns:  this.namespace, lng: this.language }));
     }
 };
 
