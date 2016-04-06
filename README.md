@@ -43,7 +43,7 @@ To interpret these files in a program, You will be required to use a library cap
 
 | Language    | Libraries
 |-------------|-------------
-| javascript  | [rrule](https://github.com/jkbrzt/rrule)
+| javascript  | [rrule](https://github.com/jkbrzt/rrule)<br> [ical.js](https://github.com/polo2ro/ical.js) (support for nodejs in this fork)
 | Python      | [dateutil](http://labix.org/python-dateutil/)
 | Ruby        | [ri_cal](https://github.com/rubyredrick/ri_cal)
 | Haskell     | Not found
