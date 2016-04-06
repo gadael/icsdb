@@ -23,6 +23,7 @@ represented countries:
 * United-Kingdom (3 files)
 * United-States (51 files)
 
+Warning, this set of ICS files is suject to move to his own domain in the near future. The github url will probably remain but offical permalinks will be modified
 
 ## Build ics files
 
