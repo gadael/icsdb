@@ -49,6 +49,7 @@ To interpret these files in a program, You will be required to use a library cap
 | Ruby        | [ri_cal](https://github.com/rubyredrick/ri_cal)
 | Haskell     | Not found
 | Java        | [ical4j](https://github.com/ical4j/ical4j)
+| Php         | [SG-iCalendar](https://github.com/fangel/SG-iCalendar)
 
 
 ## Others ICS resources
