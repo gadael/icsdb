@@ -13,6 +13,15 @@ subfolder, one file per language.
 
 Use the **raw** button on the github page to get the link, only files in the [build](build/) subfolder should be used.
 
+represented countries:
+
+* Belgium (1 file)
+* France (9 files)
+* Germany (19 files)
+* Ireland (1 file)
+* Switzerland (27 files)
+* United-Kingdom (3 files)
+* United-States (51 files)
 
 
 ## Build ics files
@@ -21,14 +30,21 @@ dev dependencies are required to rebuild ics with the script
 
     node src/build.js
     
-## Technical notes
+## Usage
 
 some easter based dates require to list all dates because the icalendar spec does not include this kind of properties. the dates are
 generated into a RDATE ical property from year 1970 to 2100.
 
 More generally, all recuring dates start from 1970 or more to prevent some bugs while decoding the events with various icalendar libraries.
 
-Similar dates use the same UID property in all calendars
+Similar dates use the same UID property in all calendars.
+
+To interpret these files in a program, You will be required to use a library capable of handling RRULE and RDATE properties. Below is a list of libraries that meet these constraints.
+
+| Language    | Libraries
+|-------------|-------------
+| javascript  | [rrule](https://github.com/jkbrzt/rrule)
+| Python      | [dateutil](http://labix.org/python-dateutil/)
 
 ## Others ICS resources
 
