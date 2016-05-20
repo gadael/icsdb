@@ -88,7 +88,7 @@ function getCalendarMarkdown(filename) {
     const us = '<img src="https://lipis.github.io/flag-icon-css/flags/4x3/us.svg" height="16" />';
     const fr = '<img src="https://lipis.github.io/flag-icon-css/flags/4x3/fr.svg" height="16" />';
 
-    const buildPath = 'https://raw.githubusercontent.com/polo2ro/icsdb/master/build/';
+    const buildPath = 'https://raw.githubusercontent.com/gadael/icsdb/master/build/';
 
     return new Promise((resolve, reject) => {
 
