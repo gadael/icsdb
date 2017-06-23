@@ -25,7 +25,7 @@ function getEventByUid(events, uid) {
  */
 function nextMonday(d) {
     let monday = new Date(d);
-    monday.setDate(monday.getDate() + 1 + monday.getDay());
+    monday.setDate(monday.getDate() + (1 + 7 - monday.getDay()) % 7);
     return monday;
 }
 
