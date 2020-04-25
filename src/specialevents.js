@@ -184,14 +184,14 @@ function updateAscent(events, from, to) {
         return;
     }
 
-    let e, easterAnd40, ascentDates = [];
+    let e, easterAnd39, ascentDates = [];
 
     for (let y = from; y< to; y++) {
         e = dateEaster.gregorianEaster(y);
 
-        easterAnd40 = new Date(e.year, e.month-1, e.day);
-        easterAnd40.setDate(easterAnd40.getDate()+40);
-        ascentDates.push(easterAnd40);
+        easterAnd39 = new Date(e.year, e.month-1, e.day);
+        easterAnd39.setDate(easterAnd39.getDate()+39);
+        ascentDates.push(easterAnd39);
     }
 
     ascent.setProperty('RDATE', ascentDates, { VALUE: 'DATE' });
